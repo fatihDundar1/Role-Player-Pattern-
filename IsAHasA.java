@@ -11,7 +11,7 @@ String pozisyon;
  abstract double HESAPLA(double yuzdeGUNDUZ,double yuzdeGECE);
 
  void getParam(String aracCinsi,int miktar ,int KM) {}
- void getParam(String sınıfı,String vardiya ,int calismaSuresi) {}
+ void getParam(String sinifi,String vardiya ,int calismaSuresi) {}
  
 } 
 
@@ -43,16 +43,16 @@ class TasimaTuru extends CALISAN{
 
 class EhliyetTuru extends CALISAN{
 	
-   String sınıfı;
+   String sinifi;
    String aracPlaka;
    String vardiya;
    int calismaSuresi;
    int asgariUcret=5500;	
    
    
-   void getParam(String sınıfı,String vardiya,int calismaSuresi) {
+   void getParam(String sinifi,String vardiya,int calismaSuresi) {
 	   
-	   this.sınıfı=sınıfı;
+	   this.sinifi=sinifi;
 	   this.vardiya=vardiya;
 	   this.calismaSuresi=calismaSuresi; 
    }
@@ -62,7 +62,7 @@ class EhliyetTuru extends CALISAN{
    double HESAPLA( double yuzdeGUNDUZ,double yuzdeGECE) {
 
 
-  if(sınıfı=="kamyon") {	
+  if(sÃ½nÃ½fÃ½=="kamyon") {	
 	  
 	   if(vardiya=="GUNDUZ" && calismaSuresi>12) {return (asgariUcret*yuzdeGUNDUZ)/100; }
 	   
@@ -73,7 +73,7 @@ class EhliyetTuru extends CALISAN{
 		   return ( ((saatlikUcret*yuzdeGECE)/100)*calismaSuresi+asgariUcret); }
    }
     
-  else if(sınıfı=="vincOperatoru") {
+  else if(sÃ½nÃ½fÃ½=="vincOperatoru") {
 	  
 	  if(vardiya=="GUNDUZ" && calismaSuresi>12) {return (asgariUcret*yuzdeGUNDUZ)/100; }
 	   
@@ -112,7 +112,7 @@ hurda.rol.getParam("KAMYON", 23, 30);
 System.out.println("hurda+kamyon: "+hurda.rol.hesapla(53.87,103.33)+" tl");
 
 hurda.rol.getParam("TIR", 23, 45);
-System.out.println("hurda+tır: "+hurda.rol.hesapla(62.33,111.62)+" tl");
+System.out.println("hurda+tÃ½r: "+hurda.rol.hesapla(62.33,111.62)+" tl");
 
 
 Player islenmisMaden= new Player();
@@ -122,7 +122,7 @@ islenmisMaden.rol.getParam("KAMYON", 23, 45);
 System.out.println("islenmis maden+kamyon: "+islenmisMaden.rol.hesapla(75.50,120.20)+" tl");
 
 islenmisMaden.rol.getParam("TIR", 23, 45);
-System.out.println("islenmis maden+tır: "+islenmisMaden.rol.hesapla(82.25,150.30)+" tl");
+System.out.println("islenmis maden+tÃ½r: "+islenmisMaden.rol.hesapla(82.25,150.30)+" tl");
 
 
 Player kamyonSurucusu =new Player();
